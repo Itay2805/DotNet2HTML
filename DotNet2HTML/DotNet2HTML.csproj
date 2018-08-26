@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>C# (.NET) to HTML Generator</Description>
+    <PackageProjectUrl>https://github.com/Itay2805/DotNet2HTML</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Itay2805/DotNet2HTML</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>html-generator html5 template-engine</PackageTags>
+    <Copyright />
+    <Authors>Itay Almog</Authors>
   </PropertyGroup>
 
 </Project>
