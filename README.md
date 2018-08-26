@@ -4,8 +4,17 @@ C# (.Net) to HTML generator. Enjoy typesafe HTML generation.
 This project is inspired by [j2html](http://j2html.com).
 
 # Getting started
+## Downlaod from Nuget
+### Package Manager
+```
+PM> Install-Package DotNet2HTML -Version 1.0.0
+```
+### .NET CLI
+```
+> dotnet add package DotNet2HTML --version 1.0.0
+```
 
-### Import the TagCreator and start building HTML
+## Import the TagCreator and start building HTML
 ```cs
 using DotNet2HTML.Tags;
 using static DotNet2HTML.TagCreator;
