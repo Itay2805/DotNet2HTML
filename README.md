@@ -1,7 +1,7 @@
 # DotNet2HTML
 C# (.Net) to HTML generator. Enjoy typesafe HTML generation.
 
-This project is inspired by [j2html](http://j2html.com).
+This project is heavily inspired by [j2html](http://j2html.com).
 
 # Getting started
 ## Downlaod from Nuget
