@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNet2HTML.Attributes
 {
-    public class Attr
+    public abstract class Attr
     {
 
         public const string ACCEPT = "accept";
@@ -119,25 +119,42 @@ namespace DotNet2HTML.Attributes
         public const string WIDTH = "width";
         public const string WRAP = "wrap";
 
-        public class ShortForm
+        public class ShortForm : Attr
         {
-            public string ID { get; }
+            public string Id { get; }
             public string Classes { get; }
 
             public ShortForm(string id, string classes)
             {
-                ID = id;
+                Id = id;
                 Classes = classes;
             }
 
             public bool HasId()
             {
-                return !string.IsNullOrEmpty(ID);
+                return !string.IsNullOrEmpty(Id);
             }
 
             public bool HasClasses()
             {
                 return !string.IsNullOrEmpty(Classes);
+            }
+
+            public override T AddTo<T>(T tag)
+            {
+                if (HasId() && HasClasses())
+                {
+                    return tag.WithId(Id).WithClass(Classes);
+                }
+                if (HasId())
+                {
+                    return tag.WithId(Id);
+                }
+                if (HasClasses())
+                {
+                    return tag.WithClass(Classes);
+                }
+                return tag;
             }
 
         }
@@ -172,23 +189,16 @@ namespace DotNet2HTML.Attributes
             return new ShortForm(id.Trim(), classes.ToString().Trim());
         }
 
-        public static T AddTo<T>(T tag, ShortForm shortForm)
-            where T : Tag<T>
+        public static T AddTo<T>(T tag, Attr attr) where T : Tag<T>
         {
-            if (shortForm.HasId() && shortForm.HasClasses())
+            if(attr != null)
             {
-                return tag.WithId(shortForm.ID).WithClass(shortForm.Classes);
-            }
-            if (shortForm.HasId())
-            {
-                return tag.WithId(shortForm.ID);
-            }
-            if (shortForm.HasClasses())
-            {
-                return tag.WithClass(shortForm.Classes);
+                attr.AddTo(tag);
             }
             return tag;
         }
+
+        public abstract T AddTo<T>(T tag) where T : Tag<T>;
 
     }
 }
