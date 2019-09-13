@@ -7,11 +7,11 @@ This project is heavily inspired by [j2html](http://j2html.com).
 ## Downlaod from Nuget
 ### Package Manager
 ```
-PM> Install-Package DotNet2HTML -Version 1.0.0
+PM> Install-Package DotNet2HTML -Version 1.0.1
 ```
 ### .NET CLI
 ```
-> dotnet add package DotNet2HTML --version 1.0.0
+> dotnet add package DotNet2HTML --version 1.0.1
 ```
 
 ## Import the TagCreator and start building HTML
