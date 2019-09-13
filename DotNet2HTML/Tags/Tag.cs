@@ -71,12 +71,14 @@ namespace DotNet2HTML.Tags
             if (value == null)
             {
                 Attributes.Add(new HtmlAttribute(name));
+                return;
             }
             foreach (var attribute in Attributes)
             {
                 if (attribute.Name.Equals(name))
                 {
                     attribute.Value = value;
+                    return;
                 }
             }
             Attributes.Add(new HtmlAttribute(name, value));
