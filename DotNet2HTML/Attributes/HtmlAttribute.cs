@@ -11,10 +11,10 @@ namespace DotNet2HTML.Attributes
         public string Name { get; }
         public object Value { get; set; }
 
-        public HtmlAttribute(string name, object value)
+        public HtmlAttribute(string name, string value)
         {
             Name = name;
-            Value = value;
+            Value = Config.TextEscaper(value);
         }
 
         public HtmlAttribute(string name)
