@@ -9,6 +9,11 @@
     <PackageTags>html-generator html5 template-engine</PackageTags>
     <Copyright />
     <Authors>Itay Almog</Authors>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>* Added so attribute will auto escape the value
+* Made the Attr class abstract and ShortForm now inherits it
+* Fixed a bug with the Tag.SetAttributes function setting the same
+attribute multiple times</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
